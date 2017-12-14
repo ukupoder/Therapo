@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void FixedUpdate() {
 
-        if (Input.GetKeyDown("q")) {
+        if (Input.GetKeyDown("escape")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 	
