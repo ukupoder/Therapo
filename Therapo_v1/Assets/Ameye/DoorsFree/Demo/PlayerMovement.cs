@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
@@ -24,6 +25,10 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
+
+        if (Input.GetKeyDown("q")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
 	
 		// Cast a ray towards the ground to see if the Walker is grounded
 		bool grounded = Physics.Raycast(transform.position, Gravity.normalized, GroundHeight);
@@ -52,5 +57,6 @@ public class PlayerMovement : MonoBehaviour {
 		
 		jump = false;
 	}
+
 	
 }
